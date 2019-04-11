@@ -28,6 +28,7 @@ class App extends Component {
       const val = this.state.sessionLength;
       this.setState({ sessionLength: updateValue(type, val) });
     }
+    this.resetTimer();
   }
 
   toggleTimer() {
@@ -64,18 +65,27 @@ class App extends Component {
     return (
       <div className="App">
         <h1 id="main-title">Pomodoro Clock</h1>
-        <div id="break-label">Break Length</div>
-        <div id="break-length">{this.state.breakLength}</div>
-        <img src="./img/Reduce Button.png" alt="Decrement Break Length" onClick={() => this.changeLength('break', 'dec')} />
-        <img src="./img/Increase Button.png" alt="Increase Break Length" onClick={() => this.changeLength('break', 'inc')} />
-        <div id="session-label">Session Length</div>
-        <div id="session-length">{this.state.sessionLength}</div>
-        <img src="./img/Reduce Button.png" alt="Decrement Session Length" onClick={() => this.changeLength('session', 'dec')} />
-        <img src="./img/Increase Button.png" alt="Increase Sessopm Length" onClick={() => this.changeLength('session', 'inc')} />
-        <div id="timer-label">{this.state.status}</div>
-        <div id="time-left">{this.state.minutesLeft}:{((this.state.secondsLeft < 10) ? '0' : null) + this.state.secondsLeft}</div>
-        <img id="start_stop" src="./img/Play Button.png" alt="Start or Stop the timer" onClick={this.toggleTimer.bind(this)} />
-        <img id="reset" src="./img/Reset Button.png" alt="Reset the timer" onClick={this.resetTimer.bind(this)} />
+        <div className="length-comand">
+          <span className="length-label" id="break-label">Break Length</span>
+          <span className="length-tag" id="break-length">{this.state.breakLength}</span>
+          <img className="arrow-button" src="./img/Reduce Button.png" alt="Decrement Break Length" onClick={() => this.changeLength('break', 'dec')} />
+          <img className="arrow-button" src="./img/Increase Button.png" alt="Increase Break Length" onClick={() => this.changeLength('break', 'inc')} />
+        </div>
+        <div className="length-comand">
+          <span className="length-label" id="session-label">Session Length</span>
+          <span className="length-tag" id="session-length">{this.state.sessionLength}</span>
+          <img className="arrow-button" src="./img/Reduce Button.png" alt="Decrement Session Length" onClick={() => this.changeLength('session', 'dec')} />
+          <img className="arrow-button" src="./img/Increase Button.png" alt="Increase Sessopm Length" onClick={() => this.changeLength('session', 'inc')} />
+        </div>
+        <div className="timer-display">
+          <div id="timer-label">{this.state.status}</div>
+          <div id="time-left">{this.state.minutesLeft}:{((this.state.secondsLeft < 10) ? '0' : null) + this.state.secondsLeft}</div>
+          <div className="comands">
+          <img id="start_stop" src="./img/Play Button.png" alt="Start or Stop the timer" onClick={this.toggleTimer.bind(this)} />
+          <img id="reset" src="./img/Reset Button.png" alt="Reset the timer" onClick={this.resetTimer.bind(this)} />
+          </div>
+        </div>
+        
       </div>
     );
   }
