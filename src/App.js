@@ -9,7 +9,7 @@ class App extends Component {
 
   changeLength(subject, type) {
     const updateValue = (sign, value) => {
-      if (sign === 'dec' && value > 0) {
+      if (sign === 'dec' && value > 1) {
         value--;
       } else if (sign === 'inc' && value < 60) {
         value++;
