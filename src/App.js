@@ -52,9 +52,12 @@ class App extends Component {
     } else {
       clearInterval(this.state.timer);
       this.setState({ running: false });
-
-
     }
+  }
+
+  resetTimer() {
+    if (this.state.running) this.toggleTimer();
+    this.setState({ minutesLeft: this.state.sessionLength, secondsLeft: 0 });
   }
 
   render() {
@@ -70,9 +73,9 @@ class App extends Component {
         <img src="./img/Reduce Button.png" alt="Decrement Session Length" onClick={() => this.changeLength('session', 'dec')} />
         <img src="./img/Increase Button.png" alt="Increase Sessopm Length" onClick={() => this.changeLength('session', 'inc')} />
         <div id="timer-label">{this.state.status}</div>
-        <div id="time-left">{this.state.minutesLeft}:{this.state.secondsLeft}</div>
+        <div id="time-left">{this.state.minutesLeft}:{((this.state.secondsLeft < 10) ? '0' : null) + this.state.secondsLeft}</div>
         <img id="start_stop" src="./img/Play Button.png" alt="Start or Stop the timer" onClick={this.toggleTimer.bind(this)} />
-        <img id="reset" src="./img/Reset Button.png" alt="Start or Stop the timer" />
+        <img id="reset" src="./img/Reset Button.png" alt="Reset the timer" onClick={this.resetTimer.bind(this)} />
       </div>
     );
   }
