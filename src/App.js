@@ -20,15 +20,14 @@ class App extends Component {
       }
       return value;
     }
-
     if (subject === 'break') {
       const val = this.state.breakLength;
       this.setState({ breakLength: updateValue(type, val) });
     } else if (subject === 'session') {
-      const val = this.state.sessionLength;
-      this.setState({ sessionLength: updateValue(type, val) });
+      let val = this.state.sessionLength;
+      val = updateValue(type, val);
+      this.setState({ sessionLength: val, minutesLeft: val, secondsLeft: 0 });
     }
-    this.resetTimer();
   }
 
   toggleTimer() {
@@ -58,7 +57,8 @@ class App extends Component {
 
   resetTimer() {
     if (this.state.running) this.toggleTimer();
-    this.setState({ minutesLeft: this.state.sessionLength, secondsLeft: 0 });
+    const timeToReset = this.state.sessionLength;
+    this.setState({ minutesLeft: timeToReset, secondsLeft: 0 });
   }
 
   render() {
@@ -81,11 +81,11 @@ class App extends Component {
           <div id="timer-label">{this.state.status}</div>
           <div id="time-left">{this.state.minutesLeft}:{((this.state.secondsLeft < 10) ? '0' : null) + this.state.secondsLeft}</div>
           <div className="comands">
-          <img id="start_stop" src="./img/Play Button.png" alt="Start or Stop the timer" onClick={this.toggleTimer.bind(this)} />
-          <img id="reset" src="./img/Reset Button.png" alt="Reset the timer" onClick={this.resetTimer.bind(this)} />
+            <img id="start_stop" src="./img/Play Button.png" alt="Start or Stop the timer" onClick={this.toggleTimer.bind(this)} />
+            <img id="reset" src="./img/Reset Button.png" alt="Reset the timer" onClick={this.resetTimer.bind(this)} />
           </div>
         </div>
-        
+
       </div>
     );
   }
