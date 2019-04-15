@@ -8,13 +8,21 @@ body{
   background-color: #2c1e2fff;
   color:white;
   font-family: sans-serif;
-  padding-top: 4.81rem;
   text-align:center;
+  height:100%;
+}
+
+aside{
+  display:none;
+}
+
+.pomodoro-img{
+  display:none;
 }
 
 #main-title{
-  margin-top: 0;
-  margin-bottom: 7rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
   font-size: 2.4rem;
   font-weight: 600;
 }
@@ -43,7 +51,6 @@ body{
   border-radius: 20%/50%;
   background-color: #b9f6d7ff;
   padding: 20px; 
-  width: 500px;
   height: 150px; 
   color: #2c1e2fff;
   margin: 0 auto;
@@ -63,4 +70,47 @@ body{
 
 .comands{
   margin-top:1.5rem;
+}
+
+.comands img{
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 992px){
+  aside{
+    background-color: #b9f6d7ff;
+    width: 20%;
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    display:block;
+  }
+  
+  .pomodoro-img{
+    max-width: 335px;
+    height:auto;
+    position: absolute;
+    left:20%;
+    top:25%;
+    margin-left: -200px;
+    z-index:100;
+    display:block;
+  }
+
+  main {
+    width: 80%;
+    height: 100%;
+    float:right;
+  }
+
+  #main-title{
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+  }
+
+
+  .timer-display{
+    width:550px;
+  }
 }
