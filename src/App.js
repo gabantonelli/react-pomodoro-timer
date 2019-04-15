@@ -8,7 +8,7 @@ class App extends Component {
     status: 'Session',
     minutesLeft: 25,
     secondsLeft: 0,
-    running: false,
+    running: false
   }
 
   changeLength(subject, type) {
@@ -44,7 +44,6 @@ class App extends Component {
       }
       const updateTimer = () => {
         if (minutes === 0 && seconds === 0) {
-          //TODO PLAY SOUND
           if (this.state.status === 'Session') {
             minutes = this.state.breakLength;
             this.setState({ status: 'Break' });
@@ -73,7 +72,19 @@ class App extends Component {
     this.setState({ minutesLeft: 25, secondsLeft: 0, sessionLength: 25, breakLength: 5 });
   }
 
+
   render() {
+
+    let playSound = null;
+    if (this.state.minutesLeft === 0 && this.state.secondsLeft < 3) {
+      playSound = (
+        <audio autoPlay>
+          <source src="./bell.mp3" type="audio/mpeg" />>
+          Your browser does not support the audio tag.
+      </audio>
+      );
+    }
+
     return (
       <div className="App">
         <aside>&nbsp;</aside>
@@ -100,6 +111,7 @@ class App extends Component {
             <img id="reset" src="./img/Reset Button.png" alt="Reset the timer" onClick={this.resetTimer.bind(this)} />
           </div>
           <img className="pomodoro-img" src="img/tomato.png" alt="Pomodoro"></img>
+          {playSound}
         </main>
       </div>
     );
