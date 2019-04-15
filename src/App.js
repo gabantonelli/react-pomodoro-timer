@@ -78,7 +78,7 @@ class App extends Component {
     let playSound = null;
     if (this.state.minutesLeft === 0 && this.state.secondsLeft < 3) {
       playSound = (
-        <audio autoPlay>
+        <audio id="beep" autoPlay>
           <source src="./bell.mp3" type="audio/mpeg" />>
           Your browser does not support the audio tag.
       </audio>
