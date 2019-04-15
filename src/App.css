@@ -47,13 +47,13 @@ aside{
 }
 
 .timer-display{
-  margin-top:20px;
   border-radius: 20%/50%;
   background-color: #b9f6d7ff;
   padding: 20px; 
   height: 150px; 
   color: #2c1e2fff;
-  margin: 0 auto;
+  margin: 20px auto;
+  width:90%;
 }
 
 #timer-label{
