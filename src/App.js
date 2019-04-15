@@ -90,6 +90,7 @@ class App extends Component {
         <aside>&nbsp;</aside>
         <main>
           <h1 id="main-title">Pomodoro Clock</h1>
+          <p class="author">by <a href="https://github.com/gabantonelli">Gabriel Antonelli</a></p>
           <div className="length-comand">
             <span className="length-label" id="break-label">Break Length</span>
             <span className="length-tag" id="break-length">{this.state.breakLength}</span>
