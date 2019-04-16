@@ -44,6 +44,7 @@ class App extends Component {
       }
       const updateTimer = () => {
         if (minutes === 0 && seconds === 0) {
+          document.getElementById('beep').play();
           if (this.state.status === 'Session') {
             minutes = this.state.breakLength;
             this.setState({ status: 'Break' });
@@ -74,17 +75,6 @@ class App extends Component {
 
 
   render() {
-
-    let playSound = null;
-    if (this.state.minutesLeft === 0 && this.state.secondsLeft < 3) {
-      playSound = (
-        <audio id="beep" autoPlay>
-          <source src="./bell.mp3" type="audio/mpeg" />>
-          Your browser does not support the audio tag.
-      </audio>
-      );
-    }
-
     return (
       <div className="App">
         <aside>&nbsp;</aside>
@@ -112,7 +102,10 @@ class App extends Component {
             <img id="reset" src="./img/Reset Button.png" alt="Reset the timer" onClick={this.resetTimer.bind(this)} />
           </div>
           <img className="pomodoro-img" src="img/tomato.png" alt="Pomodoro"></img>
-          {playSound}
+          <audio id="beep" >
+            <source src="./bell.mp3" type="audio/mpeg" />>
+            Your browser does not support the audio tag.
+      </audio>
         </main>
       </div>
     );
