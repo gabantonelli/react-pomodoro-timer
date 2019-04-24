@@ -90,7 +90,7 @@ class App extends Component {
           <div className="length-comand">
             <span className="length-label" id="session-label">Session Length</span>
             <span className="length-tag" id="session-length">{this.state.sessionLength}</span>
-            <img className="arrow-button" src="./img/Reduce Button.png" alt="Decrement Session Length" onClick={() => this.changeLength('session', 'dec')} />
+            <img className="arrow-button" src="./img/Reduce button.png" alt="Decrement Session Length" onClick={() => this.changeLength('session', 'dec')} />
             <img className="arrow-button" src="./img/Increase Button.png" alt="Increase Session Length" onClick={() => this.changeLength('session', 'inc')} />
           </div>
           <div className="timer-display">
@@ -101,7 +101,7 @@ class App extends Component {
             <img id="start_stop" src="./img/Play Button.png" alt="Start or Stop the timer" onClick={this.toggleTimer.bind(this)} />
             <img id="reset" src="./img/Reset Button.png" alt="Reset the timer" onClick={this.resetTimer.bind(this)} />
           </div>
-          <img className="pomodoro-img" src="img/tomato.png" alt="Pomodoro"></img>
+          <img className="pomodoro-img" src="./img/Tomato.png" alt="Pomodoro"></img>
           <audio id="beep" >
             <source src="./bell.mp3" type="audio/mpeg" />>
             Your browser does not support the audio tag.
