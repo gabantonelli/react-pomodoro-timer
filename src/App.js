@@ -80,11 +80,11 @@ class App extends Component {
         <aside>&nbsp;</aside>
         <main>
           <h1 id="main-title">Pomodoro Clock</h1>
-          <p class="author">by <a href="https://github.com/gabantonelli">Gabriel Antonelli</a></p>
+          <p class="author">by <a href="https://www.gabrielantonelli.it">Gabriel Antonelli</a></p>
           <div className="length-comand">
             <span className="length-label" id="break-label">Break Length</span>
             <span className="length-tag" id="break-length">{this.state.breakLength}</span>
-            <img className="arrow-button" src="./img/Reduce Button.png" alt="Decrement Break Length" onClick={() => this.changeLength('break', 'dec')} />
+            <img className="arrow-button" src="./img/Reduce button.png" alt="Decrement Break Length" onClick={() => this.changeLength('break', 'dec')} />
             <img className="arrow-button" src="./img/Increase Button.png" alt="Increase Break Length" onClick={() => this.changeLength('break', 'inc')} />
           </div>
           <div className="length-comand">
@@ -98,7 +98,7 @@ class App extends Component {
             <div id="time-left">{this.state.minutesLeft}:{((this.state.secondsLeft < 10) ? '0' : null) + this.state.secondsLeft}</div>
           </div>
           <div className="comands">
-            <img id="start_stop" src="./img/Play Button.png" alt="Start or Stop the timer" onClick={this.toggleTimer.bind(this)} />
+            <img id="start_stop" src="./img/Play button.png" alt="Start or Stop the timer" onClick={this.toggleTimer.bind(this)} />
             <img id="reset" src="./img/Reset Button.png" alt="Reset the timer" onClick={this.resetTimer.bind(this)} />
           </div>
           <img className="pomodoro-img" src="./img/Tomato.png" alt="Pomodoro"></img>
