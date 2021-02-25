@@ -80,7 +80,7 @@ class App extends Component {
         <aside>&nbsp;</aside>
         <main>
           <h1 id="main-title">Pomodoro Clock</h1>
-          <p class="author">by <a href="https://www.gabrielantonelli.it">Gabriel Antonelli</a></p>
+          <p class="author">by <a href="https://www.github.com/gabantonelli">Gabriel Antonelli</a></p>
           <div className="length-comand">
             <span className="length-label" id="break-label">Break Length</span>
             <span className="length-tag" id="break-length">{this.state.breakLength}</span>
@@ -103,7 +103,7 @@ class App extends Component {
           </div>
           <img className="pomodoro-img" src="./img/Tomato.png" alt="Pomodoro"></img>
           <audio id="beep" >
-            <source src="./bell.mp3" type="audio/mpeg" />>
+            <source src="./bell.mp3" type="audio/mpeg" />
             Your browser does not support the audio tag.
       </audio>
         </main>
